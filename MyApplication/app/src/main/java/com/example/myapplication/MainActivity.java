@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     public static final int f_SECOND_KEY = 15;
     public static final int f_THIRD_KEY = 16;
 
+    public final String MAIN_LIFECYCLE_TAG = "Main lifecycle";
+
     private final String f_MENU_TAG = "Tap Menu";
 
     private AppBarConfiguration appBarConfiguration;
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         catalogue = new Catalogue();
         InitData();
+        LogMainLifcycle("Main is onCreate!!!");
     }
 
     @Override
@@ -131,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
     {
         Log.d(TAG, text);
     }
+    void LogMainLifcycle(String text)
+    {
+        Log.d(MAIN_LIFECYCLE_TAG, "------------" + text + "--------------");
+    }
 
     void InitData()
     {
@@ -172,9 +179,45 @@ public class MainActivity extends AppCompatActivity {
         catalogue.Add(b15);
         catalogue.Add(b16);
         catalogue.Add(b17);
-        catalogue.Add(b13);
-        catalogue.Add(b14);
-        catalogue.Add(b15);
+        catalogue.Add(b18);
+        catalogue.Add(b19);
+        catalogue.Add(b20);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogMainLifcycle("Main is onStart !!!");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        LogMainLifcycle("Main is onRestart !!!");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogMainLifcycle("Main is onResume !!!");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogMainLifcycle("Main is onPause !!!");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LogMainLifcycle("Main is onStop !!!");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LogMainLifcycle("Main is onDestroy !!!");
     }
 }
