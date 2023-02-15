@@ -23,7 +23,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Title"
+                    android:text="@string/add_text_title"
                     android:textSize="24sp"
                     tools:text="Title :" />
 
@@ -47,7 +47,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Author :"
+                    android:text="@string/add_text_author"
                     android:textSize="24sp" />
 
                 <EditText
@@ -70,7 +70,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Publisher :"
+                    android:text="@string/add_text_publisher"
                     android:textSize="24sp" />
 
                 <EditText
@@ -93,7 +93,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Year :"
+                    android:text="@string/add_text_year"
                     android:textSize="24sp" />
 
                 <EditText
@@ -116,7 +116,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Pages :"
+                    android:text="@string/add_text_pages"
                     android:textSize="24sp" />
 
                 <EditText
@@ -141,7 +141,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Price :"
+                    android:text="@string/add_text_price"
                     android:textSize="24sp" />
 
                 <EditText
@@ -164,7 +164,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Binding :"
+                    android:text="@string/add_text_binding"
                     android:textSize="24sp" />
 
                 <EditText

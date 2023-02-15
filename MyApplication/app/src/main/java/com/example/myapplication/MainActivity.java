@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.ui.AppBarConfiguration;
 
+import com.example.control_tools_fragments.TestControlsFragment;
 import com.example.myapplication.databinding.ActivityMainBinding;
 
 import java.time.Year;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int f_FIRST_KEY = 14;
     public static final int f_SECOND_KEY = 15;
     public static final int f_THIRD_KEY = 16;
+    public static final int f_TOOLS_KEY = 17;
 
     public final String MAIN_LIFECYCLE_TAG = "Main lifecycle";
 
@@ -53,14 +55,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.menu_main, menu);
         menu.add(Menu.NONE, f_INFO_KEY, Menu.NONE, "Catalogue");
         menu.add(Menu.NONE, f_ADD_KEY, Menu.NONE, "Add book");
         menu.add(Menu.NONE, f_REDACT_KEY, Menu.NONE, "Redact book");
         menu.add(Menu.NONE, f_FIRST_KEY, Menu.NONE, "A) Function");
         menu.add(Menu.NONE, f_SECOND_KEY, Menu.NONE, "B) Function");
         menu.add(Menu.NONE, f_THIRD_KEY, Menu.NONE, "C) Function");
+        menu.add(Menu.NONE, f_TOOLS_KEY, Menu.NONE, "Control elements");
 
         return true;
     }
@@ -75,12 +76,6 @@ public class MainActivity extends AppCompatActivity {
             case f_INFO_KEY:
             {
                 fragmentClass = CatalogueFragment.class;
-                /*if (bundle == null) {
-                    getSupportFragmentManager().beginTransaction()
-                            .add(R.id.container, CatalogueFragment.class, null)
-                            .commit();
-                    Log.d(f_MENU_TAG, "Catalogue tap");*/
-                //}
                 break;
             }
             case f_ADD_KEY:
@@ -118,14 +113,19 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(f_MENU_TAG, "C) tap");
                 break;
             }
+            case f_TOOLS_KEY:
+            {
+                fragmentClass = TestControlsFragment.class;
+            }
         }
         try {
             fragment = (Fragment) fragmentClass.newInstance();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+
 
         return super.onOptionsItemSelected(item);
     }
