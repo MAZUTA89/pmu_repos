@@ -1,9 +1,12 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -39,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static Catalogue catalogue;
 
+    TextView invisibleText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
-
+        invisibleText = findViewById(R.id.textView2);
         catalogue = new Catalogue();
         InitData();
         LogMainLifcycle("Main is onCreate!!!");
@@ -68,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        invisibleText.setVisibility(View.INVISIBLE);
         Fragment fragment = null;
         Class fragmentClass = null;
         int id = item.getItemId();
@@ -219,5 +225,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         LogMainLifcycle("Main is onDestroy !!!");
+    }
+
+    public void onClick_userGuide(View view) {
+        Intent toGuide = new Intent(this, MainActivityGuide.class);
+        startActivity(toGuide);
     }
 }
