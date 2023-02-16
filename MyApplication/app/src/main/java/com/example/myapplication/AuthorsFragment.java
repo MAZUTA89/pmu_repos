@@ -25,9 +25,10 @@ public class AuthorsFragment extends LibraryFragment {
     EditText authorText;
     Button button;
     TextView v;
-    @Nullable
+
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View CreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.custom_authors_layout,container, false);
         editValidator = new EditValidator();
         booksListView = view.findViewById(R.id.list_view_year);

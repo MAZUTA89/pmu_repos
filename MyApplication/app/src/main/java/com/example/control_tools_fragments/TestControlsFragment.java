@@ -42,9 +42,8 @@ public class TestControlsFragment extends LibraryFragment {
     TextView time_selection;
 
     @SuppressLint("MissingInflatedId")
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View CreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tools_fragment_layout, container, false);
         first = view.findViewById(R.id.checkBox_first);
         second = view.findViewById(R.id.checkBox_second);

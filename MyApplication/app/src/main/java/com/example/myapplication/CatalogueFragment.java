@@ -22,15 +22,13 @@ public class CatalogueFragment extends LibraryFragment {
         super(R.layout.catalogue_fragment_layout);
     }*/
     Button delete_button;
-    @Nullable
+
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View CreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.catalogue_fragment_layout, container, false);
         booksListView = view.findViewById(R.id.list_view_catalogue);
-
-
         UpdateAdapter();
-
         return view;
     }
 

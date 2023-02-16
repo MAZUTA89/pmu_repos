@@ -16,9 +16,10 @@ import ui_tools.ValidateExcepsion;
 
 public class AddFragment extends LibraryFragment {
     CatalogManager catalogManager;
-    @Nullable
+
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View CreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View viewContent = inflater.inflate(R.layout.custom_add_delete_layout, container, false);
 
         catalogManager = new CatalogManager();
@@ -39,7 +40,6 @@ public class AddFragment extends LibraryFragment {
                 }
             }
         });
-
         return viewContent;
     }
 

@@ -27,9 +27,10 @@ public class YearFragment extends LibraryFragment{
     Button button;
     TextView v;
     @SuppressLint("MissingInflatedId")
-    @Nullable
+
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View CreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.custom_year_layout,container, false);
         editValidator = new EditValidator();
         booksListView = view.findViewById(R.id.list_view_year);
